@@ -8,7 +8,7 @@ int menue();
 void init();
 void show_book();
 bool add_to_book();
-int search_book();
+bool search_book();
 int del_from_book();
 int pissoff();
 void initbook();
@@ -107,7 +107,19 @@ bool add_to_book(){
     return 0;
     };
 
-
-int search_book(){return 0;};
+bool search_book(){
+    cout << "Who u looking 4?" << endl;
+    string s_lookupname;
+    cin >> s_lookupname;
+    for (int i = 0; i <= i_phonebooksize; i++) {
+        if (phonebook[i].s_surname == s_lookupname) {
+            cout << "ID: " << phonebook[i].i_ID << "    Surname: " << phonebook[i].s_surname << "    Number: " << phonebook[i].s_number << endl;
+        break;
+        }
+        else {cout << "Hmm, seems 2 b not in the book..." << endl;
+        return 1;}
+    }
+    return 0;};
+    
 int del_from_book(){return 0;};
 int pissoff(){return 0;};
